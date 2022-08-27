@@ -9,6 +9,7 @@ let winn  = ''
 let winner = ''
 let single = false
 let zeroFirst = [0,1,2,3,5,6,7,8]
+let delay = false
 
 function render () {
 	container.innerHTML = `
