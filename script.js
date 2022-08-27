@@ -41,19 +41,24 @@ function multy () {
 
 function addSingle (idx) {
 		if (arr[idx] !== '') return
-		if (winner == 'addwinn addlose' || winner == 'addwinn') return
-		if (arr[idx] == '') {
-			arr[idx] = 'x'	
-			winn = 'x'
-			findWinner()
-	
+		if (delay == false) {
+			delay = true
+			if (winner == 'addwinn addlose' || winner == 'addwinn') return
+			if (arr[idx] == '') {
+				arr[idx] = 'x'	
+				winn = 'x'
+				findWinner()
 		
-		setTimeout(() => {
-			artInt()
-			render()
-		}, 200);
-		
-	}
+			
+			setTimeout(() => {
+				artInt()
+				render()
+				delay = false
+			}, 200);
+			
+			}
+		}
+
 }
 
 
