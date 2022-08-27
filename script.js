@@ -41,15 +41,18 @@ function multy () {
 
 function addSingle (idx) {
 		if (arr[idx] !== '') return
-		if (winner == 'addwinn') return
+		if (winner == 'addwinn addlose' || winner == 'addwinn') return
 		if (arr[idx] == '') {
 			arr[idx] = 'x'	
 			winn = 'x'
 			findWinner()
 	
-
-		artInt()
-		render()
+		
+		setTimeout(() => {
+			artInt()
+			render()
+		}, 200);
+		
 	}
 }
 
@@ -86,7 +89,7 @@ function findWinner () {
 		(arr[2] == winn && arr[5] == winn && arr[8] == winn) || 
 		(arr[0] == winn && arr[4] == winn && arr[8] == winn) || 
 		(arr[2] == winn && arr[4] == winn && arr[6] == winn) ){
-
+		
 		stopGame = true
 		winner = 'addwinn'
 		if (single === true && winn == 'o') {
@@ -110,7 +113,7 @@ function clearField () {
 
 
 function artInt () {
-	if (winner == 'addwinn') return
+	if (winner == 'addwinn addlose' || winner == 'addwinn') return
 	if (arr[4] == '') {
 		arr[4] = 'o'
 	} else if (((arr[0] == 'o' && arr[3] == 'o') || (arr[2] == 'o' && arr[4] == 'o') || (arr[8] == 'o' && arr[7] == 'o')) && arr[6] == '') {
